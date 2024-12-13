@@ -12,4 +12,5 @@ use App\{Account, SocialMedia, Utility};
 
 $myAccount = new Account("Dean", 100);
 
-Utility::printArr([102, 25, 37]);
+$myAccount->setBalance(120);
+echo $myAccount->getBalance();
