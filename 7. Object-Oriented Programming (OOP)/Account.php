@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 class Account 
 {
-    public string $name;
-    public float $balance;
-
-    public function __construct(string $newName, float $newBalance)
+    public function __construct(
+        public string $name, 
+        public float $balance)
     {
-        $this->name = $newName;
-        $this->balance = $newBalance;
     }
 }
