@@ -6,5 +6,5 @@ namespace App;
 
 class ToasterPremium extends Toaster
 {
-    public int $slots = 4;
+    protected int $slots = 4;
 }

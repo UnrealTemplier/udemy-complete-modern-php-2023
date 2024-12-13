@@ -6,7 +6,7 @@ namespace App;
 
 class Toaster
 {
-    public int $slots = 2;
+    protected int $slots = 2;
 
     public function toast()
     {
