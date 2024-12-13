@@ -6,6 +6,8 @@ namespace App;
 
 class Account 
 {
+    public const INTEREST_RATE = 2;
+
     public SocialMedia $socialMedia;
 
     public function __construct(
