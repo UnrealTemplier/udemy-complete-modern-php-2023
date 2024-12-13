@@ -13,5 +13,7 @@ class Account
     public function deposit(float $value)
     {
         $this->balance += $value;
+
+        return $this;
     }
 }
