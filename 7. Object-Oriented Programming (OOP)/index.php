@@ -8,9 +8,7 @@ spl_autoload_register(function($class) {
     require_once $path;
 });
 
-use App\{Account, SocialMedia, Utility};
+use App\{Account, SocialMedia, Utility, ToasterPremium};
 
-$myAccount = new Account("Dean", 100);
-
-$myAccount->setBalance(120);
-echo $myAccount->getBalance();
+$myToaster = new ToasterPremium();
+$myToaster->toast();
