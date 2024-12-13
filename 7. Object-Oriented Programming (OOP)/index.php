@@ -11,11 +11,7 @@ spl_autoload_register(function($class) {
 use App\{Account, SocialMedia};
 
 $myAccount = new Account("Dean", 100);
+var_dump($myAccount::$count);
 
-// one way to get a constant from a class
-// through instance
-var_dump($myAccount::INTEREST_RATE);
-
-// another way to get a constant from a class
-// through the class itself
-var_dump(Account::INTEREST_RATE);
+$myAccount2 = new Account("Dean", 100);
+var_dump(Account::$count);
