@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-require_once "App/Account.php";
-require_once "App/SocialMedia.php";
+// require_once "App/Account.php";
+// require_once "App/SocialMedia.php";
 
-// instead of using multiple use statements
-// for the same namespace
-// use App\Account;
-// use App\SocialMedia;
-// we can use multiple 'use'
+spl_autoload_register(function($class) {
+    $formattedClass = str_replace("\\", "/", $class);
+    $path = "{$formattedClass}.php";
+    require_once $path;
+});
+
 use App\{Account, SocialMedia};
 
 $myAccount = new Account("Dean", 100);
