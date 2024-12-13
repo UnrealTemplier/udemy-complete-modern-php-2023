@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once "Account.php";
+require_once "App/Account.php";
 
 use App\Account;
 
