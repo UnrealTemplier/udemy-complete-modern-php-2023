@@ -8,21 +8,16 @@ spl_autoload_register(function($class) {
     require_once $path;
 });
 
-use App\{Account, FoodApp, RestaurantInterface, RestaurantOne, RestaurantTwo, SocialMedia, Utility, ToasterPremium};
+use App\{Account, EmptyArrayException, FoodApp, RestaurantInterface, RestaurantOne, RestaurantTwo, SocialMedia, Utility, ToasterPremium};
 
-$myToaster = new ToasterPremium(3);
-$myToaster->toast();
+try {
+    Utility::printArr([]);
+} catch (InvalidArgumentException|EmptyArrayException $e) {
+    echo "Custom exception: {$e->getMessage()} <br>";
+} catch (Exception $e) {
+    echo "Default exception <br>";
+} finally {
+    echo "Finally block <br>";
+}
 
-echo "<br><br>";
-
-$rest1 = new FoodApp(new class("BubbaGump") implements RestaurantInterface {
-    public function __construct(public string $name) {}
-    
-    public function prepareFood() {
-        echo "[{$this->name}] Prepare food Anonymous";
-    }
-});
-
-echo "<br><br>";
-
-Utility::printArr([]);
+echo "Finished running script";
