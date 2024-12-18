@@ -8,7 +8,12 @@ spl_autoload_register(function($class) {
     require_once $path;
 });
 
-use App\{Account, SocialMedia, Utility, ToasterPremium};
+use App\{Account, RestaurantOne, SocialMedia, Utility, ToasterPremium};
 
 $myToaster = new ToasterPremium(3);
 $myToaster->toast();
+
+echo "<br>";
+
+$rest1 = new RestaurantOne();
+$rest1->prepareFood();
