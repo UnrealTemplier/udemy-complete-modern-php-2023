@@ -10,5 +10,5 @@ spl_autoload_register(function($class) {
 
 use App\{Account, SocialMedia, Utility, ToasterPremium};
 
-$myToaster = new ToasterPremium();
+$myToaster = new ToasterPremium(3);
 $myToaster->toast();
