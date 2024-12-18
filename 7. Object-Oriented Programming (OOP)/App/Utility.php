@@ -23,4 +23,18 @@ class Utility
         print_r($array);
         echo "</pre>";
     }
+
+    public static function printDateTime(\DateTime $dateTime)
+    {
+        echo "<pre>";
+        var_dump($dateTime);
+        echo "</pre>";
+    }
+
+    public static function printDateTimeFormat(\DateTime $dateTime, string $format)
+    {
+        echo "<pre>";
+        var_dump($dateTime->format($format));
+        echo "</pre>";
+    }
 }
