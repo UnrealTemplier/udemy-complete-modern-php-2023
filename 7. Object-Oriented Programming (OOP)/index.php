@@ -8,11 +8,17 @@ spl_autoload_register(function($class) {
     require_once $path;
 });
 
-use App\{Account, FoodApp, RestaurantOne, RestaurantTwo, SocialMedia, Utility, ToasterPremium};
+use App\{Account, FoodApp, RestaurantInterface, RestaurantOne, RestaurantTwo, SocialMedia, Utility, ToasterPremium};
 
 $myToaster = new ToasterPremium(3);
 $myToaster->toast();
 
 echo "<br><br>";
 
-$rest1 = new FoodApp(new RestaurantTwo());
+$rest1 = new FoodApp(new class("BubbaGump") implements RestaurantInterface {
+    public function __construct(public string $name) {}
+    
+    public function prepareFood() {
+        echo "[{$this->name}] Prepare food Anonymous";
+    }
+});
