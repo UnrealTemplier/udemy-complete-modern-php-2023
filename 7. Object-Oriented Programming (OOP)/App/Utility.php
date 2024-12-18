@@ -15,6 +15,10 @@ class Utility
      */
     public static function printArr($array)
     {
+        if (count($array) === 0) {
+            throw new \InvalidArgumentException("Array is empty");
+        }
+
         echo "<pre>";
         print_r($array);
         echo "</pre>";

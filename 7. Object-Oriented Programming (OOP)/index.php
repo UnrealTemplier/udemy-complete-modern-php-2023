@@ -22,3 +22,7 @@ $rest1 = new FoodApp(new class("BubbaGump") implements RestaurantInterface {
         echo "[{$this->name}] Prepare food Anonymous";
     }
 });
+
+echo "<br><br>";
+
+Utility::printArr([]);
